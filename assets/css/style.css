@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav {
+    display: flex;
+    padding: 10px;
+    grid-area: menu;
+    background: #333;
+    color: white;
+}
+li {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+main {
+    grid-area: main;
+    display: none;
+    padding: 20px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-area: footer;
+    background: #333;
+    color: white;
+    padding: 10px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    opacity: 0.9;
+    gap: 20px;
+}
+
+.logo-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Pacifico', 'Segoe UI', Arial, cursive, sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
+.primary-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo-image.fa-image {
+    font-size: 40px;
+}
+
+@media screen and (min-width: 300px) and (max-width: 575px) {
+    .container {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: 
+        "menu"
+        "main"
+        "footer"
+        ;
+    }
+
+    main {
+        grid-area: main;
+        display: grid;
+        justify-content: center;
+        gap: 15px;
+        padding-bottom: 100px;
+    }
+
+    footer {
+        overflow: auto;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        z-index: 100;
+    }
+
+}
+
+@media screen and (min-width: 576px) {
+    .container {
+        display: grid;
+        grid-template-areas: 
+        "menu main main main"
+        "menu main main main"
+        "footer main main main"
+        ;
+        grid-template-columns: 1fr 10fr;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .primary-title {
+        letter-spacing: 1px;
+    }
+
+    nav {
+        display: block;
+        padding: 20px;
+        background-color: #333;
+        color: white;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: flex-start;
+        font-weight: bold;
+        cursor: pointer;
+        color: white;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+        margin-top: 20px;
+    }
+
+    li {
+        display: flex;
+        gap: 20px;
+        transition: color 0.3s ease;
+    }
+
+    li.active {
+        color: #120b3f;
+    }
+
+    li:hover {
+        color: #120b3f;
+    }
+
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        gap: 40px;
+    }
+
+    i.fa-bars {
+        display: none;
+    }
+
+    main {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 15px;
+    }
+    
+}
+
+
+.card {
+    width: 350px;
+    height: 450px;
+}
+
+.card img {
+    width: 350px;
+    height: 450px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+
+.social-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: white;
+}
+
+.white-black:hover {
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+.sepia:hover {
+    filter: sepia(100%);
+    transition: filter 0.5s ease;
+}
+.blur:hover {
+    filter: blur(3px);
+    transition: filter 0.5s ease;
+}
+.brightness:hover {
+    filter: brightness(150%);
+    transition: filter 0.5s ease;
+}
+.contrast:hover {
+    filter: contrast(200%);
+    transition: filter 0.5s ease;
+}
+.invert-colors:hover {
+    filter: invert(100%);
+    transition: filter 0.5s ease;
+}
